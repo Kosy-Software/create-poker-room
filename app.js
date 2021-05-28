@@ -19,7 +19,7 @@ app.get('/create-room', async (req, res) => {
         .post(`https://www.pokernow.club/new-integration-game?token=${process.env.INTEGRATION_TOKEN}`)
         .then(r => {
             if (r.data) {
-                res.send({ 'data': { 'gameID': r.data.gameID } });
+                res.send({ 'gameID': r.data.gameID });
             } else {
                 res.status(500).send({ 'error': 'something went wrong' });
             }
